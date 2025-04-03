@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.h                                            :+:      :+:    :+:   */
+/*   converter.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshabali <sshabali@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/02 01:11:08 by sshabali          #+#    #+#             */
-/*   Updated: 2025/04/03 03:06:21 by sshabali         ###   ########.fr       */
+/*   Created: 2025/04/03 02:30:47 by sshabali          #+#    #+#             */
+/*   Updated: 2025/04/03 03:08:04 by sshabali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_H
-# define PHILO_H
+#include "../includes/philo.h"
 
-# include <stdio.h>
-# include <stdlib.h>
+int	ft_toul(const char *nptr)
+{
+	int		i;
+	long	res;
 
-typedef struct s_philo {
-	int	n_philo;
-	int	ttd;
-	int	tte;
-	int	tts;
-	int	n_meals;
-}	t_philo;
-
-int	ft_toul(const char *nptr);
-
-#endif
+	i = 0;
+	res = 0;
+	while (nptr[i])
+	{
+		if (nptr[i] < '0' || nptr[i] > '9')
+			return (-1);
+		res = res * 10 + nptr[i] - '0';
+		i++;
+	}
+	if (res > __INT_MAX__)
+		return (-1);
+	return (res);
+}

@@ -1,4 +1,5 @@
-SRCS		=	main.c
+SRCS		=	main.c \
+				converter.c
 
 SRCS_F		=	srcs/
 OBJS_F		=	objs/
